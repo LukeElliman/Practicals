@@ -3,6 +3,8 @@ CP1404/CP5632 - Practical
 Broken program to determine score status
 """
 
+import random
+
 
 def main():
     """Contains the main program"""
@@ -20,6 +22,11 @@ def result_determine(score):
         return "Passable"
     else:
         return "Bad"
+
+
+def random_score():
+    random_value = random.randint(0,100)
+    return random_value
 
 
 main()
