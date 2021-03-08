@@ -10,6 +10,8 @@ def main():
     """Contains the main program"""
     score = float(input("Enter score: "))
     print(result_determine(score))
+    score = random_score()
+    print("{0} is {1}".format(score, result_determine(score)))
 
 
 def result_determine(score):
