@@ -1,0 +1,20 @@
+43 is Bad
+41 is Bad
+45 is Bad
+ 3 is Bad
+65 is Passable
+30 is Bad
+72 is Passable
+81 is Passable
+54 is Passable
+59 is Passable
+44 is Bad
+30 is Bad
+79 is Passable
+26 is Bad
+99 is Excellent
+11 is Bad
+71 is Passable
+49 is Bad
+80 is Passable
+90 is Excellent
