@@ -1,3 +1,6 @@
+"""Program to check a password based on its length compared to a variable length
+Luke Elliman"""
+
 def main():
     """Stores the main part of the program"""
     password = input("Enter the password: ")
