@@ -48,7 +48,7 @@ def random_score():
 def file_output(value):
     """Outputs text to file"""
     out_file = open("results.txt", 'w')
-    for i in range(1, value +1, 1):
+    for i in range(1, value + 1, 1):
         score = random_score()
         print("{0:>2} is {1}".format(score, result_determine(score)), file=out_file)
     out_file.close()
