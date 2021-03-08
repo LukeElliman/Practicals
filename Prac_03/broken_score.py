@@ -27,10 +27,9 @@ def result_determine(score):
 
 
 def random_score():
-    random_value = random.randint(0,100)
+    """Generates a random value between 0 to 100"""
+    random_value = random.randint(0, 100)
     return random_value
 
 
 main()
-
-
