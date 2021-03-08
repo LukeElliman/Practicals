@@ -3,7 +3,7 @@ def main():
     password = input("Enter the password: ")
     password_length = int(input("Enter the password length: "))
     password_length = password_length_verifier(password_length)
-    user_password_check(password, password_length)
+    password = user_password_check(password, password_length)
     for i in password:
         print(end="*")
 
@@ -28,6 +28,7 @@ def user_password_check(password,length):
     while len(password) < length:
         print("Not long enough")
         password = input("Enter the password: ")
+    return password
 
 
 main()
