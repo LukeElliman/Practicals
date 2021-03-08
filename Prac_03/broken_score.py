@@ -7,10 +7,10 @@ Broken program to determine score status
 def main():
     """Contains the main program"""
     score = float(input("Enter score: "))
-    print(result(score))
+    print(result_determine(score))
 
 
-def result(score):
+def result_determine(score):
     """Determines the users result based on score"""
     if score < 0 or score > 100:
         return "Invalid score"
