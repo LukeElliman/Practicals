@@ -9,7 +9,11 @@ import random
 def main():
     """Contains the main program"""
     number_of_scores = score_choice_amount()
-    file_output(number_of_scores)
+    out_file = open("results.txt", 'w')
+    for i in range(1, number_of_scores + 1, 1):
+        score = random_score()
+        print("{0:>2} is {1}".format(score, result_determine(score)), file=out_file)
+    out_file.close()
 
 
 def score_choice_amount():
@@ -43,15 +47,6 @@ def random_score():
     """Generates a random value between 0 to 100"""
     random_value = random.randint(0, 100)
     return random_value
-
-
-def file_output(value):
-    """Outputs text to file"""
-    out_file = open("results.txt", 'w')
-    for i in range(1, value + 1, 1):
-        score = random_score()
-        print("{0:>2} is {1}".format(score, result_determine(score)), file=out_file)
-    out_file.close()
 
 
 main()
