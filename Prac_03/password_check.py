@@ -3,16 +3,13 @@ def main():
     password = input("Enter the password: ")
     password_length = int(input("Enter the password length: "))
     password_length = password_length_verifier(password_length)
-    while len(password) < password_length:
-        print("Not long enough")
-        password = input("Enter the password: ")
-
+    user_password_check(password, password_length)
     for i in password:
         print(end="*")
 
 
 def password_length_verifier(length):
-    """See if the inputted password_length is an integer"""
+    """See if the inputted password length is an integer"""
     valid_length = False
     while not valid_length:
         try:
@@ -24,6 +21,13 @@ def password_length_verifier(length):
         except ValueError:
             print("Input must be an integer")
     return length
+
+
+def user_password_check(password,length):
+    """Checks if the inputted password is less than the password length"""
+    while len(password) < length:
+        print("Not long enough")
+        password = input("Enter the password: ")
 
 
 main()
