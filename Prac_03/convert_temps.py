@@ -7,7 +7,15 @@ import random
 
 
 def main():
+    """Converts text file with fahrenheit values to celsius values"""
     random_fahrenheit_list()
+    in_file = open("temps_input.txt", "r")
+    out_file_celsius = open("temps_output.txt", "w")
+    for i in range(0, 21, 1):
+        fahrenheit = float(in_file.readline())
+        print("{0}".format(float(fahrenheit_to_celsius(fahrenheit))), file=out_file_celsius)
+    in_file.close()
+    out_file_celsius.close()
 
 
 def random_fahrenheit_list():
