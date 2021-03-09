@@ -18,6 +18,8 @@ def main():
     print("The character for {} is {}".format(number, chr(number)))
 
     columns = get_column(MIN_COLUMNS, MAX_COLUMNS)
+    number_of_values = UPPER - LOWER + 1
+    rows = number_of_values // columns
 
 
 def get_number(lower, upper):
