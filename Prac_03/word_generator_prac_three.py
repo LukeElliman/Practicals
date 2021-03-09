@@ -14,7 +14,10 @@ VALID_INPUT = "cv"
 
 def main():
     #User input
-    word_format = is_valid_format()
+    valid_input = False
+    while not valid_input:
+        word_format = str(input("Enter c's for consonant and v's for vowels: ")).lower()
+        valid_input = is_valid_format(word_format)
     word = ""
     for kind in word_format:
         if kind == "c":
@@ -38,21 +41,21 @@ def main():
     print(word)
 
 
-def is_valid_format():
-    valid_input = False
-    while not valid_input:
+def is_valid_format(user_input):
+    """Checks if input is valid"""
+    valid = False
+    valid_character_count = 0
+    for each_character in user_input:
+        if each_character not in VALID_INPUT:
+            valid_character_count += 1
+    if valid_character_count > 0:
+        print("Your input must only be c's and v's")
         valid_character_count = 0
-        user_input = str(input("Enter c's for consonant and v's for vowels: ")).lower()
-        for each_character in user_input:
-            if each_character not in VALID_INPUT:
-                valid_character_count += 1
-        if valid_character_count > 0:
-            print("Your input must only be c's and v's")
-        elif len(user_input) <= 0:
-            print("Your input must have more then 0 characters")
-        else:
-            print("Valid input \n")
-            valid_input = True
-    return user_input
+    elif len(user_input) <= 0:
+        print("Your input must have more then 0 characters")
+    else:
+        print("Valid input \n")
+        valid = True
+    return valid
 
 main()
