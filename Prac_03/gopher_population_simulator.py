@@ -14,6 +14,7 @@ MAX_DECREASE = 0.25
 
 YEARS = 10
 
+
 def main():
     """Runs the main program"""
     population = 1000
