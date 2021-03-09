@@ -14,7 +14,7 @@ MAX_DECREASE = 0.05  # 5%
 MIN_PRICE = 1
 MAX_PRICE = 100
 INITIAL_PRICE = 10.0
-OUTPUT_FILE = "stock_ouput.txt"
+OUTPUT_FILE = "stock_output.txt"
 
 day = 0
 price = INITIAL_PRICE
