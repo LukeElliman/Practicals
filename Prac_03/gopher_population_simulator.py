@@ -20,9 +20,8 @@ def main():
     print("Welcome to the Gopher Population Simulator!")
     print("Starting population: {0}".format(population))
     print("Year 1\n")
-    for i in range(2, YEARS + 1, 1):
-        print(i)
-
+    for year in range(2, YEARS + 1, 1):
+        population_print(population, year)
 
 
 def increase():
@@ -37,16 +36,29 @@ def decrease():
     return decrease_amount
 
 
-def population_increase_calculator(population):
+def population_increase(population):
     """Calculates the population increase"""
     population = population * decrease()
     return population
 
 
-def population_decrease_calculator(population):
+def population_decrease(population):
     """Calculates the population decrease"""
     population = population * decrease()
     return population
+
+
+def population_print(population, value):
+    """
+    Prints out the increase and decrease in population.
+    Then calculates and prints the population at the end of the year
+    """
+    increase_amount = population_increase(population)
+    decrease_amount = population_decrease(population)
+    print("{0} gophers were  born. {1} died.".format(int(increase_amount), int(decrease_amount)))
+    population = population + int(increase_amount) - int(decrease_amount)
+    print("Population: {0}".format(int(population)))
+    print("Year {0}\n".format(value))
 
 
 main()
