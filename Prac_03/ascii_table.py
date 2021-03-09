@@ -21,6 +21,8 @@ def main():
     number_of_values = UPPER - LOWER + 1
     rows = number_of_values // columns
 
+    print(table_print(rows, columns))
+
 
 def get_number(lower, upper):
     """Gets input from user about value they want in a certain range"""
@@ -50,6 +52,20 @@ def get_column(lower, upper):
         except ValueError:
             print("You must input an integer")
     return value
+
+
+def table_print(rows, columns):
+    value = LOWER
+    for row in range(rows):
+        for column in range(columns):
+            print("{:6} {:>2}".format(value, chr(value)), end="")
+            value += 1
+        print()
+
+    starting_value = value
+    for value in range(starting_value, UPPER + 1):
+        print("{:6} {:>2}".format(value, chr(value)), end="")
+    print("\n")
 
 
 main()
