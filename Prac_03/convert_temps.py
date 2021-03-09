@@ -12,10 +12,16 @@ def main():
 
 def random_fahrenheit_list():
     """Generates a random list of values in a text file"""
-    out_file = open("temp_input.txt", "w")
+    out_file = open("temps_input.txt", "w")
     for i in range(0, 21, 1):
-        print(random.uniform(-200,200), file=out_file)
+        print(random.uniform(-200, 200), file=out_file)
     out_file.close()
+
+
+def fahrenheit_to_celsius(fahrenheit):
+    """Converts fahrenheit to celsius"""
+    celsius = 5 / 9 * (fahrenheit - 32)
+    return celsius
 
 
 main()
