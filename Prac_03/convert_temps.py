@@ -5,13 +5,15 @@ Luke Elliman
 
 import random
 
+MAX_ENTRIES = 20
+
 
 def main():
     """Converts text file with fahrenheit values to celsius values"""
     random_fahrenheit_list()
     in_file = open("temps_input.txt", "r")
     out_file_celsius = open("temps_output.txt", "w")
-    for i in range(0, 21, 1):
+    for i in range(0, MAX_ENTRIES + 1, 1):
         fahrenheit = float(in_file.readline())
         print("{0}".format(float(fahrenheit_to_celsius(fahrenheit))), file=out_file_celsius)
     in_file.close()
@@ -21,7 +23,7 @@ def main():
 def random_fahrenheit_list():
     """Generates a random list of values in a text file"""
     out_file = open("temps_input.txt", "w")
-    for i in range(0, 21, 1):
+    for i in range(0, MAX_ENTRIES + 1, 1):
         print(random.uniform(-200, 200), file=out_file)
     out_file.close()
 
