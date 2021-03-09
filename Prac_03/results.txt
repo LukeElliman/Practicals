@@ -1,5 +1,10 @@
-57 is Passable
-40 is Bad
-16 is Bad
-18 is Bad
-68 is Passable
+46 is Bad
+66 is Passable
+85 is Passable
+74 is Passable
+20 is Bad
+ 8 is Bad
+91 is Excellent
+32 is Bad
+86 is Passable
+ 8 is Bad
