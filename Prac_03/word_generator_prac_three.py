@@ -18,12 +18,7 @@ def main():
     while not valid_input:
         word_format = str(input("Enter c's for consonant and v's for vowels: ")).lower()
         valid_input = is_valid_format(word_format)
-    word = ""
-    for kind in word_format:
-        if kind == "c":
-            word += random.choice(CONSONANTS)
-        else:
-            word += random.choice(VOWELS)
+    word = word_generator(word_format)
 
     print(word + "\n")
 
@@ -31,12 +26,7 @@ def main():
     number_of_letters = int(input("How many letters do you want? "))
     letters = "cv"
     word_format = "".join(random.choice(letters) for i in range(number_of_letters))
-    word = ""
-    for kind in word_format:
-        if kind == "c":
-            word += random.choice(CONSONANTS)
-        else:
-            word += random.choice(VOWELS)
+    word = word_generator(word_format)
 
     print(word)
 
@@ -57,5 +47,17 @@ def is_valid_format(user_input):
         print("Valid input \n")
         valid = True
     return valid
+
+
+def word_generator(user_input):
+    """Turns the cv input into words"""
+    word = ""
+    for kind in user_input:
+        if kind == "c":
+            word += random.choice(CONSONANTS)
+        else:
+            word += random.choice(VOWELS)
+    return word
+
 
 main()
