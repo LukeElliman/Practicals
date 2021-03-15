@@ -7,8 +7,11 @@ FILENAME = "subject_data.txt"
 
 
 def main():
+    """Turn subject_data.txt into list and print list"""
     data = get_data()
     print(data)
+    for i in range(0, len(data) + 1):
+        print("{0} is taught by {1:<12} and has {2:<3} students".format(data[i][0], data[i][1], data[i][2]))
 
 
 def get_data():
