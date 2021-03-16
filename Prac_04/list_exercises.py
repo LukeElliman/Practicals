@@ -3,6 +3,7 @@ Luke Elliman
 """
 
 AMOUNT_OF_NUMBERS = 5
+usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface', 'BaseStdIn', 'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer', 'bob']
 
 
 def main():
@@ -23,6 +24,12 @@ def main():
     print("The smallest number is {0}".format(min_number(numbers)))
     print("The largest number is {0}".format(max_number(numbers)))
     print("The average number is {0:,.2f}".format(avg_number(numbers)))
+
+    name_input = str(input("Enter your name: "))
+    if username_check(usernames, name_input):
+        print("Access granted")
+    else:
+        print("Access denied")
 
 
 def first_number(numbers: list) -> int:
@@ -53,6 +60,14 @@ def avg_number(numbers: list) -> float:
     """Get average number from list"""
     value = sum(numbers)/len(numbers)
     return value
+
+
+def username_check(names: list, user_input: str) -> bool:
+    """Check if user input is in a list"""
+    for name in range(len(names)):
+        if user_input == names[name]:
+            return True
+    return False
 
 
 main()
