@@ -38,3 +38,5 @@ print(numbers)
 
 # TODO: use a list comprehension to create a list of only the numbers that are
 # greater than 9 from the numbers (not strings) you just created
+more_than_nine = [number for number in numbers if number > 9]
+print(more_than_nine)
