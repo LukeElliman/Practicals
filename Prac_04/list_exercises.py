@@ -21,6 +21,7 @@ def main():
     print("The first number is {0}".format(first_number(numbers)))
     print("The last number is {0}".format(last_number(numbers)))
     print("The smallest number is {0}".format(min_number(numbers)))
+    print("The largest number is {0}".format(max_number(numbers)))
 
     print(numbers)
 
@@ -40,6 +41,12 @@ def last_number(numbers: list) -> int:
 def min_number(numbers: list) -> int:
     """Get smallest number from list"""
     value = min(numbers)
+    return value
+
+
+def max_number(numbers: list) -> int:
+    """Get largest number from list"""
+    value = max(numbers)
     return value
 
 main()
