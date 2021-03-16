@@ -24,8 +24,6 @@ def main():
     print("The largest number is {0}".format(max_number(numbers)))
     print("The average number is {0:,.2f}".format(avg_number(numbers)))
 
-    print(numbers)
-
 
 def first_number(numbers: list) -> int:
     """Get first number from list"""
