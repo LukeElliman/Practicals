@@ -22,6 +22,7 @@ def main():
     print("The last number is {0}".format(last_number(numbers)))
     print("The smallest number is {0}".format(min_number(numbers)))
     print("The largest number is {0}".format(max_number(numbers)))
+    print("The average number is {0:,.2f}".format(avg_number(numbers)))
 
     print(numbers)
 
@@ -48,5 +49,12 @@ def max_number(numbers: list) -> int:
     """Get largest number from list"""
     value = max(numbers)
     return value
+
+
+def avg_number(numbers: list) -> float:
+    """Get average number from list"""
+    value = sum(numbers)/len(numbers)
+    return value
+
 
 main()
