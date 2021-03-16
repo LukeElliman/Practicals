@@ -18,7 +18,14 @@ def main():
             except ValueError:
                 print("Input must be an integer.")
 
+    print("The first number is {0}".format(first_number(numbers)))
+
     print(numbers)
+
+
+def first_number(numbers: list) -> int:
+    value = numbers[0]
+    return value
 
 
 main()
