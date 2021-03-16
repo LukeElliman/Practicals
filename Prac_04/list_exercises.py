@@ -19,12 +19,21 @@ def main():
                 print("Input must be an integer.")
 
     print("The first number is {0}".format(first_number(numbers)))
+    print("The last number is {0}".format(last_number(numbers)))
 
     print(numbers)
 
 
 def first_number(numbers: list) -> int:
+    """Get first number from list"""
     value = numbers[0]
+    return value
+
+
+
+def last_number(numbers: list) -> int:
+    """Get last number from list"""
+    value = numbers[-1]
     return value
 
 
