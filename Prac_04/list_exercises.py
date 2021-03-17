@@ -31,6 +31,28 @@ def main():
     else:
         print("Access denied")
 
+    #Practice 2 question
+    numbers = []
+    number_amount = 1
+    valid_input = False
+    while not valid_input:
+        try:
+            user_number = int(input("Number {}: ".format(number_amount)))
+            if user_number >= 0:
+                number_amount += 1
+                numbers.append(user_number)
+            else:
+                valid_input = True
+        except ValueError:
+            print("Input must be an integer.")
+
+    print("The first number is {0}".format(first_number(numbers)))
+    print("The last number is {0}".format(last_number(numbers)))
+    print("The smallest number is {0}".format(min_number(numbers)))
+    print("The largest number is {0}".format(max_number(numbers)))
+    print("The average number is {0:,.2f}".format(avg_number(numbers)))
+
+
 
 def first_number(numbers: list) -> int:
     """Get first number from list"""
