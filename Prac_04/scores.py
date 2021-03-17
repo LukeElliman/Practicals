@@ -19,15 +19,17 @@ def main():
     score_values = []
     for score_line in scores_data[1:]:
         score_strings = score_line.strip().split(",")
-        score_numbers = [int(value) for value in score_strings]
+        score_numbers = [int(value) for value in score_strings[0:]]
         score_values.append(score_numbers)
     scores_file.close()
+    column = 0
     for i in range(len(subjects)):
         print(subjects[i], "Scores:")
-        for score in score_values[i]:
-            print(score)
+        for score in range(len(score_values)):
+            print(score_values[score][column])
         print("Max:", max(score_values[i]))
         print()
+        column += 1
 
 
 main()
