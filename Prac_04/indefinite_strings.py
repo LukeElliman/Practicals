@@ -9,7 +9,12 @@ def main():
     while len(strings) <= 0:
         print("You must enter at least one string")
         strings = string_get()
-    print(repeated_string_check(strings))
+    repeated_strings = repeated_string_check(strings)
+    if len(repeated_strings) >= 1:
+        for i in range(len(repeated_strings)):
+            print("Strings repeated: " + repeated_strings[i])
+    else:
+        print("No strings repeated")
 
 
 def string_get():
