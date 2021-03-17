@@ -19,11 +19,7 @@ def main():
             except ValueError:
                 print("Input must be an integer.")
 
-    print("The first number is {0}".format(first_number(numbers)))
-    print("The last number is {0}".format(last_number(numbers)))
-    print("The smallest number is {0}".format(min_number(numbers)))
-    print("The largest number is {0}".format(max_number(numbers)))
-    print("The average number is {0:,.2f}".format(avg_number(numbers)))
+    number_print(numbers)
 
     name_input = str(input("Enter your name: "))
     if username_check(usernames, name_input):
@@ -46,12 +42,7 @@ def main():
         except ValueError:
             print("Input must be an integer.")
 
-    print("The first number is {0}".format(first_number(numbers)))
-    print("The last number is {0}".format(last_number(numbers)))
-    print("The smallest number is {0}".format(min_number(numbers)))
-    print("The largest number is {0}".format(max_number(numbers)))
-    print("The average number is {0:,.2f}".format(avg_number(numbers)))
-
+    number_print(numbers)
 
 
 def first_number(numbers: list) -> int:
@@ -82,6 +73,15 @@ def avg_number(numbers: list) -> float:
     """Get average number from list"""
     value = sum(numbers)/len(numbers)
     return value
+
+
+def number_print(numbers):
+    """Prints numbers after operations are applied"""
+    print("The first number is {0}".format(first_number(numbers)))
+    print("The last number is {0}".format(last_number(numbers)))
+    print("The smallest number is {0}".format(min_number(numbers)))
+    print("The largest number is {0}".format(max_number(numbers)))
+    print("The average number is {0:,.2f}".format(avg_number(numbers)))
 
 
 def username_check(names: list, user_input: str) -> bool:
