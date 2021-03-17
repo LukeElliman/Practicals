@@ -6,6 +6,9 @@ Luke Elliman
 
 def main():
     strings = string_get()
+    while len(strings) <= 0:
+        print("You must enter at least one string")
+        strings = string_get()
     print(repeated_string_check(strings))
 
 
