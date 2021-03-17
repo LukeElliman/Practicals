@@ -9,6 +9,8 @@ Nice. Except, it’s broken! It reads the lists per user not per subject so the 
 Use the debugger to follow what it's doing... then fix it.
 """
 
+ROWS = 11
+COLUMNS = 5
 
 def main():
     """Read and display student scores from scores file."""
@@ -23,18 +25,28 @@ def main():
         score_values.append(score_numbers)
     scores_file.close()
     column = 0
-    results = []
+    temporary_results = [] #temporary list of each result for each subject, resets when it  goes to new subject
+    full_results = [] #list of each result in order based on subjects, does not reset when going to new subject
     for i in range(len(subjects)):
         print(subjects[i], "Scores:")
         for score in range(len(score_values)):
-            results.append(score_values[score][column])
-        print(results)
-        print("Max:", max(results))
-        print("Min:", min(results))
-        print("Avg:", sum(results)/len(results))
+            temporary_results.append(score_values[score][column])
+        print(str(temporary_results)[1:-1])
+        print("Max:", max(temporary_results))
+        print("Min:", min(temporary_results))
+        print("Avg:", sum(temporary_results)/len(temporary_results))
         print()
-        results = []
+        full_results.append(temporary_results)
+        temporary_results = []
         column += 1
+
+    for row in range(ROWS):
+        for column in range(COLUMNS):
+            if row == 0:
+                print("{0:^5} ".format(subjects[column]), end="")
+            else:
+                print("{0:^5} ".format(full_results[column][row - 1]), end="")
+        print()
 
 
 main()
