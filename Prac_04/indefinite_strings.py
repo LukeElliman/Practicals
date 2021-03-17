@@ -6,10 +6,11 @@ Luke Elliman
 
 def main():
     strings = string_get()
-    print(strings)
+    print(repeated_string_check(strings))
 
 
 def string_get():
+    """Ask user for strings, until input is blank"""
     strings = []
     blank_string = False
     while not blank_string:
@@ -19,6 +20,20 @@ def string_get():
         else:
             strings.append(user_input)
     return strings
+
+
+def repeated_string_check(strings):
+    """Check user input for repeated strings, makes list of repeated strings"""
+    repeated_strings = []
+    count = 1
+    for string in strings:
+        if string in repeated_strings:
+            count += 1
+        else:
+            if string in strings[count:len(strings) + 1]:
+                repeated_strings.append(string)
+            count += 1
+    return repeated_strings
 
 
 main()
