@@ -5,6 +5,7 @@ Luke Elliman
 
 
 def main():
+    """Prints repeated value from list of string"""
     strings = string_get()
     while len(strings) <= 0:
         print("You must enter at least one string")
