@@ -10,5 +10,7 @@ for word in words:
     word_to_count[word] = amount + 1
 
 final_words = list(word_to_count)
+final_words.sort()
+print(final_words)
 for word in final_words:
     print("{0} : {1}".format(word, word_to_count[word]))
