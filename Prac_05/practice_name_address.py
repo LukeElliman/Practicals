@@ -8,6 +8,13 @@ name_to_address = {"Robert Cop": "Dunworth Street", "Bob Timmy": "Sesame Street"
 
 def main():
     choice = menu()
+    while choice != "Q":
+        if choice == "A":
+            name = str(input("Enter a name: ")).strip()
+            address = str(input("Enter and address: ")).strip()
+            name_to_address[name] = address
+            print(name_to_address)
+            choice = menu()
 
 
 def menu():
@@ -26,3 +33,7 @@ Q - quit"""
         choice = str(input(">>> ")).upper()
     else:
         return choice
+
+
+
+main()
