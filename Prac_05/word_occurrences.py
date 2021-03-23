@@ -1,8 +1,7 @@
 """Count word occurences in a string"""
 
 word_to_count = {}
-# text = str(input("Text: "))
-text = "this is a collection of words of nice words this is a fun thing it is"
+text = str(input("Text: "))
 
 words = text.split()
 for word in words:
@@ -11,6 +10,9 @@ for word in words:
 
 final_words = list(word_to_count)
 final_words.sort()
-print(final_words)
+
+longest_word = max((len(word) for word in final_words))
+
 for word in final_words:
-    print("{0} : {1}".format(word, word_to_count[word]))
+    print("{0:{1}}:  {2}".format(word, longest_word, word_to_count[word]))
+
