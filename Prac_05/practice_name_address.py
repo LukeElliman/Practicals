@@ -10,10 +10,17 @@ def main():
     choice = menu()
     while choice != "Q":
         if choice == "A":
-            name = str(input("Enter a name: ")).strip()
-            address = str(input("Enter and address: ")).strip()
+            name = str(input("Enter a name: ")).strip().title()
+            address = str(input("Enter an address: ")).strip().title()
             name_to_address[name] = address
-            print(name_to_address)
+            choice = menu()
+        if choice == "E":
+            name = str(input("Enter a name for an adress you want to change: ")).strip()
+            if name in name_to_address:
+                address = str(input("Enter an address: ")).strip().title()
+                name_to_address[name] = address
+            else:
+                print("That name is not valid")
             choice = menu()
 
 
