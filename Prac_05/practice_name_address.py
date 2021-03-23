@@ -15,10 +15,17 @@ def main():
             name_to_address[name] = address
             choice = menu()
         if choice == "E":
-            name = str(input("Enter a name for an adress you want to change: ")).strip()
+            name = str(input("Enter a name for an address you want to change: ")).strip().title()
             if name in name_to_address:
                 address = str(input("Enter an address: ")).strip().title()
                 name_to_address[name] = address
+            else:
+                print("That name is not valid")
+            choice = menu()
+        if choice == "P":
+            name = str(input("Enter a name for address you want printed: ")).strip().title()
+            if name in name_to_address:
+                print("{0} lives at {1}".format(name, name_to_address[name]))
             else:
                 print("That name is not valid")
             choice = menu()
