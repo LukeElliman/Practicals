@@ -23,11 +23,14 @@ def main():
             vintage_string = ""
             if guitar.is_vintage():
                 vintage_string = "(vintage)"
-            print("Guitar {}, {} ({}), worth ${} {}".format(i + 1,
-                                                            guitar.name,
-                                                            guitar.year,
-                                                            guitar.cost,
-                                                            vintage_string))
+            # print("Guitar {}, {} ({}), worth ${} {}".format(i + 1,
+            #                                                 guitar.name,
+            #                                                 guitar.year,
+            #                                                 guitar.cost,
+            #                                                 vintage_string))
+            print("Guitar {}, {guitar.name} ({guitar.year}), "
+                  "worth ${guitar.cost} {}".format(i + 1, vintage_string,
+                                                   guitar=guitar,))
     else:
         print("No guitars")
 
