@@ -1,9 +1,22 @@
 BoxLayout:
     orientation: 'vertical'
-    Button:
-        id: up_button
-        text: "Up"
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: mile_input
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                id: up_button
+                text: "Up"
 
+            Button:
+                id: down_button
+                text: "Down"
     Button:
-        id: down_button
-        text: "Down"
+        id: convert_mile_km_input
+        text: "Convert m to km"
+    Label:
+        id: output_label
+        text: 'Enter your name'
+        color: (1, 1, 0, 1)
