@@ -4,6 +4,7 @@ BoxLayout:
         orientation: 'horizontal'
         TextInput:
             id: mile_input
+            on_text: app.convert_mile_to_km(mile_input.text)
         BoxLayout:
             orientation: 'vertical'
             Button:
