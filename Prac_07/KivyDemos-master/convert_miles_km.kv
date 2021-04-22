@@ -15,8 +15,9 @@ BoxLayout:
                 text: "Down"
     Button:
         id: convert_mile_km_input
-        text: "Convert m to km"
+        text: "Convert mile to km"
+        on_press: app.handle_press()
     Label:
         id: output_label
-        text: 'Enter your name'
+        text: app.output_km
         color: (1, 1, 0, 1)
