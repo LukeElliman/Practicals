@@ -12,7 +12,7 @@ class GradeCalculator(App):
     def handle_calculate(self):
         """Displays output box as grade"""
         number_grade = self.convert_to_float(self.root.ids.input_grade.text)
-        if 0 <= number_grade <= 100:
+        if type(number_grade) == float and 0 <= number_grade <= 100:
             if 85 <= number_grade <= 100:
                 self.root.ids.output_grade.text = "HD"
             elif 75 <= number_grade <= 84:
@@ -36,7 +36,7 @@ class GradeCalculator(App):
         try:
             return float(text)
         except ValueError:
-            return -1  # Goes to -1 if they do not enter a value that can be a float
+            return None
 
 
 GradeCalculator().run()
