@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.button import Button
 from kivy.properties import StringProperty
-from Prac_07.Dynamic_Button_List.person_name import People
+from Prac_07.Dynamic_Button_List.people import People
 
 
 class DynamicNameButtons(App):
@@ -10,14 +10,14 @@ class DynamicNameButtons(App):
     """Create a list of buttons from a csv"""
     def __init__(self):
         super().__init__()
-        in_file = open("dynamic_names.csv", 'r')
+        in_file = open("practice_four_names.csv", 'r')
         self.list_of_names = create_list_of_lists(in_file)
         in_file.close()
 
     def build(self):
         """Build the Kivy GUI."""
-        self.title = "Dynamic Labels"
-        self.root = Builder.load_file('dynamic_names.kv')
+        self.title = "Dynamic Buttons"
+        self.root = Builder.load_file('practice_four.kv')
         self.create_widgets()
         return self.root
 
