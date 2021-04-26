@@ -2,7 +2,7 @@
 CP1404/CP5632 Practical
 Car class
 """
-from prac_08.car import Car
+from Prac_08.cars import Car
 
 
 class Taxi(Car):
