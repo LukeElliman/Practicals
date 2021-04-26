@@ -29,6 +29,7 @@ class DynamicNameButtons(App):
             self.root.ids.name_button.add_widget(temp_button)
 
     def press_entry(self, instance):
+        """Change label when button pressed"""
         name = instance.text
         for person in self.list_of_names:
             if person.name == name:
@@ -38,7 +39,7 @@ class DynamicNameButtons(App):
 
 
 def create_list_of_lists(in_file):
-    """Convert book.csv into a list of lists"""
+    """Convert csv into a list of lists"""
     list_of_strings = in_file.readlines()  # List containing each row as one value
     list_of_lists = []  # List containing each row as a list of values
     for number, line in enumerate(list_of_strings):
