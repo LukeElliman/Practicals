@@ -16,7 +16,10 @@ def main():
     while choice != "Q":
         if choice == "C":
             print_taxis(taxis)
-            car_choice = get_valid_integer("Choose Taxi: ", taxis)
+            car_choice = get_valid_integer("Choose Taxi: ")
+            while car_choice < 0 or car_choice > len(taxis) - 1:
+                print(f"Choice must be between 0 and {len(taxis) - 1}")
+                car_choice = get_valid_integer("Choose Taxi: ")
             current_taxi = taxis[car_choice]
             print(f"Bill to date ${total_bill}")
             print(MENU)
@@ -26,9 +29,15 @@ def main():
                 print("You do not have a taxi selected")
                 choice = input(">>>").upper()
             else:
-                drive_distance = get_valid_integer("Drive how far? ", taxis)
-                print(current_taxi)
+                drive_distance = get_valid_integer("Drive how far? ")
+                while drive_distance < 0:
+                    print(f"Choice must be above 0")
+                    drive_distance = get_valid_integer("Drive how far? ")
                 current_taxi.drive(drive_distance)
+                total_bill += current_taxi.get_fare()
+                print(MENU)
+                choice = input(">>>").upper()
+
 
         else:
             print("You must choose q,d or c")
@@ -42,16 +51,13 @@ def print_taxis(taxis):
         print(f"{value} - {name} ")
 
 
-def get_valid_integer(prompt, taxis):
+def get_valid_integer(prompt):
     """Function to make sure input is an integer"""
     valid_input = False
     while not valid_input:
         try:
             car_choice = int(input(prompt))
-            if car_choice > len(taxis) - 1 or car_choice < 0:
-                print(f"Choice must be between 0 and {len(taxis) - 1}")
-            else:
-                return car_choice
+            return car_choice
         except ValueError:
             print("Choice must be an integer")
 
