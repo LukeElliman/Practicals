@@ -14,11 +14,12 @@ class UnreliableCar(Car):
 
     def __str__(self):
         """Print values of unreliable car"""
-        return f"{self.name}, {self.fuel}, {self.reliability}"
+        return f"{self.name}, fuel = {self.fuel}, reliability = {self.reliability}"
 
     def drive(self, distance):
-        drive_chance = randint(0,100)
-        if drive_chance >= self.reliability
+        """Generate random value to see if car will drive"""
+        drive_chance = randint(0, 100)
+        if drive_chance >= self.reliability:
             distance = 0
         distance_driven = super().drive(distance)
         return distance_driven
