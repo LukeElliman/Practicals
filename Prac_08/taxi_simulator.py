@@ -35,14 +35,17 @@ def main():
                     drive_distance = get_valid_integer("Drive how far? ")
                 current_taxi.drive(drive_distance)
                 total_bill += current_taxi.get_fare()
+                print(f"Your {current_taxi.name} trip cost ${current_taxi.get_fare()}")
                 print(MENU)
                 choice = input(">>>").upper()
-
-
         else:
-            print("You must choose q,d or c")
-            print(MENU)
-            choice = input(">>>").upper()
+            if choice != "Q":
+                print("You must choose q,d or c")
+                print(MENU)
+                choice = input(">>>").upper()
+    print(f"Total trip cost: ${total_bill}")
+    print("Taxis are now")
+    print_taxis(taxis)
 
 
 def print_taxis(taxis):
