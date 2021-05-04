@@ -1,0 +1,18 @@
+BoxLayout:
+    orientation: 'vertical'
+    TextInput:
+        id: temp
+        on_text: app.fahrenheit_to_celsius()
+        on_text: app.celsius_to_fahrenheit()
+
+
+    BoxLayout:
+        orientation: 'horizontal'
+        Label:
+            id: fahrenheit_label
+            text: app.output_fahrenheit
+
+
+        Label:
+            id: celsius_label
+            text: app.output_celsius
