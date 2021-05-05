@@ -12,7 +12,8 @@ def main():
         # print(filenames)
 
         filetypes = get_file_types(filenames)
-        filetypes_to_directory = (filetypes, filetypes_to_directory)
+        filetypes_to_directory = make_directories(filetypes, filetypes_to_directory)
+        move_files(filenames, filetypes_to_directory)
 
 
 def get_file_types(filenames):
@@ -35,5 +36,10 @@ def make_directories(filetypes, filetypes_to_directory):
             pass
     return filetypes_to_directory
 
+
+def move_files(filenames, filetypes_to_directory):
+    """Move files to right directory"""
+    for filename in filenames:
+        shutil.move(filename, filetypes_to_directory[filename.split('.')[1]] + '/')
 
 main()
