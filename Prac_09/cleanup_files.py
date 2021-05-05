@@ -20,9 +20,9 @@ def main():
             new_filename = title_case_words(new_filename)
             print(f"{filename} becomes {new_filename}")
 
-            # full_name = os.path.join(directory_name, filename)
-            # new_name = os.path.join(directory_name, new_filename)
-            # os.rename(full_name, new_name)
+            full_name = os.path.join(directory_name, filename)
+            new_name = os.path.join(directory_name, new_filename)
+            os.rename(full_name, new_name)
 
 
 def replace_spaces_and_TXT(filename):
