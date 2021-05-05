@@ -15,15 +15,16 @@ def main():
         # print("(Current working directory is: {})".format(os.getcwd()))
 
         for filename in filenames:
-            new_word = split_word_by_capitals(filename)
-            print(f"{filename} becomes {new_word}")
+            new_filename = replace_spaces_and_TXT(filename)
+            new_filename = split_word_by_capitals(new_filename)
+            new_filename = title_case_words(new_filename)
 
             full_name = os.path.join(directory_name, filename)
-            new_name = os.path.join(directory_name, get_fixed_filename(filename))
+            new_name = os.path.join(directory_name, new_filename)
             os.rename(full_name, new_name)
 
 
-def get_fixed_filename(filename):
+def replace_spaces_and_TXT(filename):
     """Return a 'fixed' version of filename."""
     new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
     return new_name
@@ -35,7 +36,11 @@ def split_word_by_capitals(filename):
     new_filename = []
     # Gets position of lowercase to uppercase to know where to splice word
     for number in range(len(filename)):
+        # Get location of lowercase and capital
         if number + 1 < len(filename) and filename[number].islower() and filename[number + 1].isupper():
+            slice_positions.append(number + 1)
+        # Get locations of 2 capitals next to each other
+        if number + 1 < len(filename) and filename[number].isupper() and filename[number + 1].isupper():
             slice_positions.append(number + 1)
 
     # Splices word into an array based off values gotten above
@@ -48,6 +53,18 @@ def split_word_by_capitals(filename):
     # Turns array into new word
     new_word = "_".join(new_filename)
     return new_word
+
+
+def title_case_words(filename):
+    """Title cases words in an array"""
+    titled_words = []
+    split_filename_by_underscores = filename.split("_")
+    for word in split_filename_by_underscores:
+        titled_words.append(word[0].upper() + word[1:])
+
+    new_word = "_".join(titled_words)
+    return new_word
+
 
 
 main()
