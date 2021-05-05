@@ -1,4 +1,5 @@
 import os
+import shutil
 
 
 def main():
@@ -10,6 +11,7 @@ def main():
         # print(filenames)
 
         make_directories(filenames)
+        move_directories(filenames)
 
 
 def make_directories(filenames):
@@ -19,5 +21,11 @@ def make_directories(filenames):
             os.mkdir(filename.split(".")[1])
         except FileExistsError:
             pass
+
+
+def move_directories(filenames):
+    """Move files to directories depending on filetype"""
+    for filename in filenames:
+        shutil.move(filename, filename.split(".")[1] + "/" )
 
 main()
