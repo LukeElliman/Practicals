@@ -9,8 +9,15 @@ def main():
         # print(subdirectories)
         # print(filenames)
 
+        make_directories(filenames)
 
-def make_directories():
-    print("Placeholder")
+
+def make_directories(filenames):
+    """Make directories based off of file types"""
+    for filename in filenames:
+        try:
+            os.mkdir(filename.split(".")[1])
+        except FileExistsError:
+            pass
 
 main()
