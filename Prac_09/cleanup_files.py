@@ -18,10 +18,11 @@ def main():
             new_filename = replace_spaces_and_TXT(filename)
             new_filename = split_word_by_capitals(new_filename)
             new_filename = title_case_words(new_filename)
+            print(f"{filename} becomes {new_filename}")
 
-            full_name = os.path.join(directory_name, filename)
-            new_name = os.path.join(directory_name, new_filename)
-            os.rename(full_name, new_name)
+            # full_name = os.path.join(directory_name, filename)
+            # new_name = os.path.join(directory_name, new_filename)
+            # os.rename(full_name, new_name)
 
 
 def replace_spaces_and_TXT(filename):
@@ -60,9 +61,14 @@ def title_case_words(filename):
     titled_words = []
     split_filename_by_underscores = filename.split("_")
     for word in split_filename_by_underscores:
-        titled_words.append(word[0].upper() + word[1:])
+        if ".txt" in word:
+            txt_split = word.split(".")
+            titled_words.append(txt_split[0].title())
+        else:
+            titled_words.append(word.title())
 
     new_word = "_".join(titled_words)
+    new_word += ".txt"
     return new_word
 
 
